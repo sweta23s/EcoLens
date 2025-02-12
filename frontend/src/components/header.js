@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import '../CSS/Header.css';  // Assuming you have the CSS in a separate file
 
 const Header = () => {
-    const tips = [
+    const tips = useMemo(() => [
         "Reduce, reuse, and recycle to minimize waste.",
         "Turn off lights when not in use to save energy.",
         "Opt for reusable bags instead of plastic ones.",
@@ -52,35 +52,30 @@ const Header = () => {
         "Support sustainable tourism.",
         "Choose sustainable furniture options.",
         "Support organizations working on wildlife conservation."
-    ];
-    
+    ], []);
 
     const [currentTipIndex, setCurrentTipIndex] = useState(0);
     const [displayTip, setDisplayTip] = useState("");
     const [charIndex, setCharIndex] = useState(0);
 
-    // Typing animation logic
     useEffect(() => {
-        // Clear the previous interval to avoid overlap
         const clearTipInterval = setInterval(() => {
             if (charIndex < tips[currentTipIndex].length) {
                 setDisplayTip((prev) => prev + tips[currentTipIndex][charIndex]);
                 setCharIndex((prevCharIndex) => prevCharIndex + 1);
             } else {
                 clearInterval(clearTipInterval);
-
-                // After 5 seconds, reset the tip and move to the next one
+    
                 setTimeout(() => {
                     setDisplayTip("");
                     setCharIndex(0);
                     setCurrentTipIndex((prevIndex) => (prevIndex + 1) % tips.length);
                 }, 5000);
             }
-        }, 100); // Speed of typing animation
-
-        // Cleanup on component unmount or when tip changes
+        }, 100);
+    
         return () => clearInterval(clearTipInterval);
-    }, [charIndex, currentTipIndex]);
+    }, [charIndex, currentTipIndex, tips]);
 
     return (
         <header className="header">
