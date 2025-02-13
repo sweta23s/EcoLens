@@ -12,10 +12,15 @@ const app = express();
 
 const corsOptions = {
     origin: [process.env.FRONTEND_URL],
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], 
+    allowedHeaders: ["Content-Type"],
     credentials: true,
 };
 app.use(cors(corsOptions));
+
+// Handle Preflight Requests Manually
+app.options('*', cors(corsOptions));
+
 
 app.use(express.json());
 
