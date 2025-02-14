@@ -1,6 +1,6 @@
 # EcoLens
 
-![image](https://github.com/user-attachments/assets/3921958c-776a-471a-82cf-b00295301113)# EcoLens
+![image](https://github.com/user-attachments/assets/3921958c-776a-471a-82cf-b00295301113)
 
 **EcoLens** is a sustainability analysis tool that allows users to scan a product barcode and get detailed sustainability scores based on various environmental and social parameters. It utilizes a barcode lookup API, web scraping, and Google's generative AI to gather and assess product sustainability information.
 
@@ -18,8 +18,8 @@
 ## Features
 - Barcode scanning and product lookup.
 - Web scraping for additional product and brand information.
-- Google generative AI integration to generate sustainability scores.
-- Detailed breakdown of sustainability metrics including materials, energy usage, waste management, and more.
+- Uses Google Generative AI to analyze product sustainability based on extracted data.
+- Detailed breakdown of sustainability metrics including materials, energy usage, waste management, etc.
 
 ## Technologies Used
 - **Frontend**: React, React Markdown
@@ -45,14 +45,13 @@ cd EcoLens
 Create a `.env` file in the backend directory and add the following variables:
 ```env
 FRONTEND_URL=http://localhost:3000
-PORT=5000
 BARCODE_LOOKUP_API_KEY=<your-barcode-lookup-api-key>
 API_KEY=<your-google-generative-ai-api-key>
 ```
 
 Create a `.env` file in the frontend directory and add the following variables:
 ```env
-BACKEND_URL=http://localhost:5000
+REACT_APP_BACKEND_URL=http://localhost:5000
 ```
 
 ### Run the app
