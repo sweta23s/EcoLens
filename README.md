@@ -84,10 +84,9 @@ REACT_APP_BACKEND_URL=http://localhost:5000
 
 ## Environment Variables
 - **FRONTEND_URL**: The URL of your frontend application.
-- **PORT**: The port for running the backend.
-- **MONGO_URI**: MongoDB connection string (optional, if you're using MongoDB).
+- **REACT_APP_BACKEND_URL**: The URL of your backend application.
 - **BARCODE_LOOKUP_API_KEY**: API key for Barcode Lookup.
-- **GOOGLE_GEMINI_API_KEY**: API key for Google generative AI.
+- **API_KEY**: API key for Google generative AI.
 
 ## Project Structure
 ```plaintext
