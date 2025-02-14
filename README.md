@@ -4,6 +4,8 @@
 
 **EcoLens** is a sustainability analysis tool that allows users to scan a product barcode and get detailed sustainability scores based on various environmental and social parameters. It utilizes a barcode lookup API, web scraping, and Google's generative AI to gather and assess product sustainability information.
 
+## Live Website: https://eco-lens-eta.vercel.app
+
 ## Table of Contents
 - [Features](#features)
 - [Technologies Used](#technologies-used)
